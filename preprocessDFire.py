@@ -2,10 +2,10 @@ import os
 import random
 import shutil
 
-train_images_folder = "D-Fire/train/images"
-train_labels_folder = "D-Fire/train/labels"
-val_images_folder = "D-Fire/val/images"
-val_labels_folder = "D-Fire/val/labels"
+train_images_folder = "datasets/D-Fire/train/images"
+train_labels_folder = "datasets/D-Fire/train/labels"
+val_images_folder = "datasets/D-Fire/val/images"
+val_labels_folder = "datasets/D-Fire/val/labels"
 
 # Create the validation folders if they don't exist
 os.makedirs(val_images_folder, exist_ok=True)

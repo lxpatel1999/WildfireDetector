@@ -2,7 +2,7 @@
 # This script runs only on Debian-based systems
 
 # Define the virtual environment name
-VENV_NAME="venv_WildfireDetector"
+VENV_NAME=".venv_WildfireDetector"
 
 
 # Check if already inside a virtual environment

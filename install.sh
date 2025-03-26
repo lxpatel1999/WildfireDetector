@@ -4,9 +4,9 @@
 # See -> https://github.com/AlimTleuliyev/wildfire-detection/blob/main/training-recipes/README.md
 
 # Define the datasets directory and D-Fire related files
-DATASETS_DIR="datasets"
-DFIRE_ZIP="$DATASETS_DIR/D-Fire.zip"
-DFIRE_DIR="$DATASETS_DIR/D-Fire"
+
+DFIRE_ZIP="D-Fire.zip"
+DATASETS_DIR="datasets/D-Fire"
 
 # Check if D-Fire.zip exists inside the datasets directory
 if [[ ! -f "$DFIRE_ZIP" ]]; then
@@ -23,13 +23,13 @@ if [[ ! -f "$DFIRE_ZIP" ]]; then
     # Run gdown --help after checking/installing gdown
     echo "Running gdown..."
     gdown 19LSrZHYQqJSdKgH8Mtlgg7-i-L3eRhbh # if not working, replace this string with your own link from Google Drive
-    exit 1
 fi
 
 # Check if the D-Fire directory exists inside datasets
-if [[ ! -d "$DFIRE_DIR" ]]; then
-    echo "$DFIRE_DIR directory not found. Unzipping $DFIRE_ZIP..."
-    unzip "$DFIRE_ZIP" -d "$DATASETS_DIR"
+if [[ ! -d "$DATASETS_DIR" ]]; then
+    echo "$DATASETS_DIR directory not found. Unzipping $DFIRE_ZIP..."
+    mkdir -p "$DATASETS_DIR"
+    unzip -q "$DFIRE_ZIP" -d "$DATASETS_DIR"
 else
-    echo "$DFIRE_DIR directory already exists. Skipping unzip."
+    echo "$DATASETS_DIR directory already exists. Skipping unzip. Delete dataset directory and rerun this scipt to remake dataset."
 fi
